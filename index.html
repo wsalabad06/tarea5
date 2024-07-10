@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .ejemplo {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplos de JavaScript</h1>
+
+    <div class="ejemplo" id="control-de-flujo">
+        <h2>Control de flujo y manejo de errores</h2>
+        <h3>if...else</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let edad = 18;
+if (edad >= 18) {
+    console.log("Eres mayor de edad");
+} else {
+    console.log("Eres menor de edad");
+}
+        </code></pre>
+
+        <div class="ejemplo">
+            <h3>switch</h3>
+            <p>Ejemplo:</p>
+            <pre><code>
+let diaDeLaSemana = 3;
+switch (diaDeLaSemana) {
+    case 1:
+        console.log("Lunes");
+        break;
+    case 2:
+        console.log("Martes");
+        break;
+    case 3:
+        console.log("Miércoles");
+        break;
+    default:
+        console.log("Día no válido");
+}
+            </code></pre>
+        </div>
+
+        <div class="ejemplo">
+            <h3>try/catch/throw</h3>
+            <p>Ejemplo:</p>
+            <pre><code>
+function dividir(a, b) {
+    try {
+        if (b === 0) {
+            throw new Error("No se puede dividir por cero");
+        }
+        return a / b;
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+console.log(dividir(10, 2)); // Resultado: 5
+console.log(dividir(10, 0)); // Mostrará el mensaje de error
+            </code></pre>
+        </div>
+
+        <div class="ejemplo">
+            <h3>Objetos Error</h3>
+            <p>Ejemplo:</p>
+            <pre><code>
+try {
+    throw new Error("Este es un error personalizado");
+} catch (error) {
+    console.error("Ocurrió un error:", error.message);
+}
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="ejemplo" id="bucles-e-iteracion">
+        <h2>Bucles e iteración</h2>
+        <h3>for</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+        </code></pre>
+
+        <div class="ejemplo">
+            <h3>while</h3>
+            <p>Ejemplo:</p>
+            <pre><code>
+let contador = 0;
+while (contador < 5) {
+    console.log(contador);
+    contador++;
+}
+            </code></pre>
+        </div>
+
+        <div class="ejemplo">
+            <h3>do...while</h3>
+            <p>Ejemplo:</p>
+            <pre><code>
+let contador = 0;
+do {
+    console.log(contador);
+    contador++;
+} while (contador < 5);
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="ejemplo" id="funciones">
+        <h2>Funciones</h2>
+        
+        <div class="ejemplo">
+            <h3>Definir funciones</h3>
+            <p>Ejemplo:</p>
+            <pre><code>
+// Definir una función para sumar dos números
+function sumar(a, b) {
+    return a + b;
+}
+
+// Definir una función para calcular el área de un rectángulo
+function calcularArea(base, altura) {
+    return base * altura;
+}
+            </code></pre>
+        </div>
+
+        <div class="ejemplo">
+            <h3>Llamar funciones</h3>
+            <p>Ejemplo:</p>
+            <pre><code>
+// Llamar la función sumar y mostrar el resultado
+let resultadoSuma = sumar(5, 3);
+console.log("Resultado de la suma:", resultadoSuma);
+
+// Llamar la función calcularArea y mostrar el resultado
+let areaRectangulo = calcularArea(10, 5);
+console.log("Área del rectángulo:", areaRectangulo);
+            </code></pre>
+        </div>
+    </div>
+
+    <h1>Ejemplos de Operadores en JavaScript</h1>
+
+    <div class="ejemplo">
+        <h2>Asignación</h2>
+        <p>El operador de asignación <code>=</code> se usa para asignar un valor a una variable.</p>
+        <pre><code>let x = 10;</code></pre>
+        <p>Operadores de asignación compuestos:</p>
+        <pre><code>
+let y = 5;
+y += 3; // Equivalente a y = y + 3
+y -= 2; // Equivalente a y = y - 2
+        </code></pre>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Comparación</h2>
+        <p>Operadores de comparación se usan para comparar dos valores.</p>
+        <pre><code>
+let a = 5;
+let b = 10;
+let c = 5;
+let result1 = (a == c); // true
+let result2 = (a == b); // false
+let result3 = (a != b); // true
+        </code></pre>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Operadores Aritméticos</h2>
+        <p>Operadores aritméticos realizan operaciones matemáticas sobre números.</p>
+        <pre><code>
+let num1 = 10;
+let num2 = 3;
+let sum = num1 + num2;        // 13
+let difference = num1 - num2; // 7
+let product = num1 * num2;    // 30
+let quotient = num1 / num2;   // 3.33
+let remainder = num1 % num2;  // 1
+        </code></pre>
+    </div>
+
+    <div class="ejemplo" id="numeros-y-fechas">
+        <h2>Números y fechas</h2>
+        <h3>Objeto Number</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let num = 10;
+console.log(Number.isInteger(num)); // true
+console.log(num.toFixed(2)); // "10.00"
+        </code></pre>
+
+        <h3>Objeto Math</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+console.log(Math.sqrt(16)); // 4
+console.log(Math.floor(4.6)); // 4
+console.log(Math.random()); // número aleatorio entre 0 y 1
+        </code></pre>
+
+        <h3>Objeto Date</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let fechaActual = new Date();
+console.log(fechaActual.getFullYear()); // año actual
+console.log(fechaActual.getMonth()); // mes actual (0-11)
+console.log(fechaActual.getDate()); // día del mes
+        </code></pre>
+    </div>
+
+    <div class="ejemplo" id="formateo-de-texto">
+        <h2>Formateo de texto</h2>
+        <h3>Cadenas literales</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let nombre = "Juan";
+let mensaje = `Hola, ${nombre}!`;
+console.log(mensaje); // "Hola, Juan!"
+        </code></pre>
+
+        <h3>Objeto String</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let texto = "JavaScript";
+console.log(texto.length); // longitud del texto
+console.log(texto.toUpperCase()); // "JAVASCRIPT"
+console.log(texto.substring(0, 4)); // "Java"
+        </code></pre>
+    </div>
+
+    <div class="ejemplo" id="colecciones-indexadas">
+        <h2>Colecciones indexadas</h2>
+        <h3>Arreglos</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let frutas = ['manzana', 'naranja', 'banana'];
+console.log(frutas[0]); // "manzana"
+console.log(frutas.length); // cantidad de elementos
+        </code></pre>
+
+        <h3>Arreglos tipados</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let numeros = new Int32Array([1, 2, 3, 4, 5]);
+console.log(numeros[0]); // 1
+console.log(numeros.length); // cantidad de elementos
+        </code></pre>
+    </div>
+
+    <div class="ejemplo" id="dom">
+        <h2>DOM (Document Object Model)</h2>
+        
+        <h3>Encontrar elementos HTML por ID</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let elementoPorId = document.getElementById('miElemento');
+console.log(elementoPorId);
+        </code></pre>
+        
+        <h3>Encontrar elementos HTML por nombre de etiqueta</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let elementosPorEtiqueta = document.getElementsByTagName('div');
+console.log(elementosPorEtiqueta);
+        </code></pre>
+        
+        <h3>Encontrar elementos HTML por nombre de clase</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let elementosPorClase = document.getElementsByClassName('ejemplo');
+console.log(elementosPorClase);
+        </code></pre>
+        
+        <h3>Encontrar elementos HTML mediante selectores CSS</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let elementoPorSelector = document.querySelector('#miElemento');
+console.log(elementoPorSelector);
+        </code></pre>
+        
+        <h3>Encontrar elementos HTML por colecciones de objetos HTML</h3>
+        <p>Ejemplo:</p>
+        <pre><code>
+let todosLosDivs = document.querySelectorAll('div');
+console.log(todosLosDivs);
+        </code></pre>
+    </div>
+
+</body>
+</html>
